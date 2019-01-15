@@ -1,0 +1,5 @@
+package exchanger
+
+object MessageExchanger {
+
+}
