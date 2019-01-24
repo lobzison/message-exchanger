@@ -34,7 +34,7 @@ object Implementations extends App{
   //println(Stream.resource(transactor).flatMap(xa => query.transact(xa)).compile.toList.unsafeRunSync())
 
   val file: java.io.File = new java.io.File("/Users/lobzison/code/src/github.com/lobzison/resources/test_output")
-  val mqResource = Resource.fromAutoCloseable(IO(new java.io.FileOutputStream(file)))
+  val mqResource = Resource.make(IO(new java.io.FileOutputStream(file)))(fos => IO{fos.close(); println("closed file")})
 
   val testResource = Resource.make(IO(StupidRes("test")))(a => IO(a.close()))
 
@@ -59,6 +59,7 @@ object Implementations extends App{
   } yield write
 
   println("start")
+
   streamBoth.compile.drain.unsafeRunSync()
 
   case class StupidRes(path: String) {

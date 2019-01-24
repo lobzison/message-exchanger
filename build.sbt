@@ -71,4 +71,6 @@ scalacOptions ++= Seq(
   // format: on
 )
 
+resolvers += Resolver.sonatypeRepo("releases")
 addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.0-M4")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
