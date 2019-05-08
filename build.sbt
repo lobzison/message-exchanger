@@ -9,6 +9,7 @@ val LogbackVersion         = "1.2.3"
 val PureConfigVersion      = "0.10.1"
 val ScalaCheckVersion      = "1.14.0"
 val ScalaTestVersion       = "3.0.5"
+val MonixVersion           = "3.0.0-RC2"
 
 libraryDependencies ++= Seq(
   "org.typelevel"         %% "cats-core"             % CatsVersion,
@@ -17,7 +18,8 @@ libraryDependencies ++= Seq(
   "com.github.pureconfig" %% "pureconfig"             % PureConfigVersion,
   "com.github.pureconfig" %% "pureconfig-cats-effect" % PureConfigVersion,
   "org.scalacheck"        %% "scalacheck"             % ScalaCheckVersion % Test,
-  "org.scalatest"         %% "scalatest"              % ScalaTestVersion  % Test)
+  "org.scalatest"         %% "scalatest"              % ScalaTestVersion  % Test,
+  "io.monix"              %% "monix"                  % MonixVersion)
 
 scalacOptions ++= Seq(
   // format: off
@@ -68,3 +70,7 @@ scalacOptions ++= Seq(
   "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
   // format: on
 )
+
+resolvers += Resolver.sonatypeRepo("releases")
+addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.0-M4")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
