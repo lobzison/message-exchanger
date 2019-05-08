@@ -1,4 +1,4 @@
-package exchanger.infrastructure.stream
+package exchanger.wip
 
 import doobie.ExecutionContexts
 import doobie.hikari.HikariTransactor

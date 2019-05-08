@@ -20,6 +20,8 @@ object MessageExchanger extends App{
 
   val res2 = Resource.make(IO{println("open res2"); Connection("res2")})(_ => IO(println("close res2")))
 
+
+
   //combining two resources
   val resPair = for {
     source <- res1

@@ -1,9 +1,9 @@
-package exchanger.infrastructure.stream
-
+package exchanger.wip
 
 import cats.Monad
 import cats.effect.Effect
 import monix.eval.Task
+
 object KindProj extends App{
 
   trait TestAlgebra[F[_], A, B]{

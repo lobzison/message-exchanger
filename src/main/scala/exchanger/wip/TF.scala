@@ -1,4 +1,4 @@
-package exchanger.domain
+package exchanger.wip
 
 object TF extends App{
 

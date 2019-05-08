@@ -1,4 +1,4 @@
-package exchanger.infrastructure.stream
+package exchanger.wip
 
 object Writer extends App{
   import java.io._
