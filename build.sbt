@@ -10,6 +10,7 @@ val PureConfigVersion      = "0.10.1"
 val ScalaCheckVersion      = "1.14.0"
 val ScalaTestVersion       = "3.0.5"
 val MonixVersion           = "3.0.0-RC2"
+val ZIOVersion             = "1.0-RC4"
 
 libraryDependencies ++= Seq(
   "org.typelevel"         %% "cats-core"             % CatsVersion,
@@ -17,9 +18,11 @@ libraryDependencies ++= Seq(
   "org.tpolecat"          %% "doobie-hikari"          % DoobieVersion,
   "com.github.pureconfig" %% "pureconfig"             % PureConfigVersion,
   "com.github.pureconfig" %% "pureconfig-cats-effect" % PureConfigVersion,
+  "io.monix"              %% "monix"                  % MonixVersion,
+  "org.scalaz"            %% "scalaz-zio"             % ZIOVersion,
   "org.scalacheck"        %% "scalacheck"             % ScalaCheckVersion % Test,
   "org.scalatest"         %% "scalatest"              % ScalaTestVersion  % Test,
-  "io.monix"              %% "monix"                  % MonixVersion)
+  )
 
 scalacOptions ++= Seq(
   // format: off

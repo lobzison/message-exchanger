@@ -40,8 +40,9 @@ object TaskImplementations extends App{
 
   val streamBoth = for {
     res <- streamWithRes
-    queryRes <- query.transact(res._1)
-    write <- Stream.eval(Task{res._2.write(queryRes.toString.getBytes()); res._2.flush()})
+    (db, file) = res
+    queryRes <- query.transact(db)
+    write <- Stream.eval(Task{file.write(queryRes.toString.getBytes()); file.flush()})
   } yield write
 
   println("Started")
