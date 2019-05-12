@@ -20,3 +20,5 @@ TAGS
 *.sublime-project
 *.sublime-workspace
 tests.iml
+/project
+*.jar
